@@ -9,9 +9,11 @@ const textAssets = [
   ["index.html", "text/html; charset=utf-8"],
   ["servizi.html", "text/html; charset=utf-8"],
   ["metodo.html", "text/html; charset=utf-8"],
+  ["gestionale.html", "text/html; charset=utf-8"],
   ["privacy.html", "text/html; charset=utf-8"],
   ["style.css", "text/css; charset=utf-8"],
   ["script.js", "text/javascript; charset=utf-8"],
+  ["form-config.js", "text/javascript; charset=utf-8"],
   ["services.js", "text/javascript; charset=utf-8"],
   ["page-flow.js", "text/javascript; charset=utf-8"],
   ["logo-fatto.svg", "image/svg+xml; charset=utf-8"],
@@ -42,7 +44,7 @@ function decodeBase64(value) {
 
 function securityHeaders() {
   return {
-    "Content-Security-Policy": "default-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self'; connect-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'",
+    "Content-Security-Policy": "default-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self'; connect-src 'self' https://script.google.com https://script.googleusercontent.com; base-uri 'self'; form-action 'self'; frame-ancestors 'none'",
     "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
     "Referrer-Policy": "strict-origin-when-cross-origin",
     "X-Content-Type-Options": "nosniff",
