@@ -143,8 +143,7 @@ button { font: inherit; }
 
 .client-area-header:hover { background: var(--blue); border-color: var(--blue); box-shadow: 0 14px 28px rgba(8, 42, 68, .17); transform: translateY(-2px); }
 
-.whatsapp-button,
-.instagram-button {
+.whatsapp-button {
   position: relative;
   width: 44px;
   height: 44px;
@@ -190,8 +189,7 @@ button { font: inherit; }
   border-radius: 50%;
 }
 
-.whatsapp-button::before,
-.instagram-button::before {
+.whatsapp-button::before {
   content: "";
   position: absolute;
   inset: -5px;
@@ -205,9 +203,6 @@ button { font: inherit; }
 .whatsapp-button img { width: 24px; height: 24px; display: block; }
 .whatsapp-button:hover { transform: translateY(-3px); border-color: rgba(37, 211, 102, .45); box-shadow: 0 14px 28px rgba(8, 42, 68, .14); }
 .whatsapp-button:hover::before { opacity: 1; transform: scale(1); }
-.instagram-button::before { border-color: rgba(8, 121, 189, .25); }
-.instagram-button:hover { transform: translateY(-3px); border-color: rgba(8, 121, 189, .45); box-shadow: 0 14px 28px rgba(8, 42, 68, .14); }
-.instagram-button:hover::before { opacity: 1; transform: scale(1); }
 
 .menu-toggle {
   display: none;
@@ -736,6 +731,10 @@ h1 em {
 }
 
 .home-footer a { color: #647d8c; font-weight: 650; text-decoration: none; }
+.home-footer .home-instagram { display: inline-flex; align-items: center; gap: 8px; color: var(--blue); }
+.home-footer .home-instagram .instagram-glyph { width: 16px; height: 16px; }
+.home-footer .home-instagram .instagram-glyph::before { width: 6px; height: 6px; border-width: 1.5px; }
+.home-footer .home-instagram .instagram-glyph::after { width: 3px; height: 3px; top: 2px; right: 2px; }
 .home-footer a:hover,
 .page-footer a:hover { color: var(--blue); }
 
@@ -1328,9 +1327,8 @@ body.menu-open .page-dots { visibility: hidden; opacity: 0; pointer-events: none
   .header-actions { margin-left: auto; }
   .client-area-header { height: 42px; padding: 0 12px; gap: 7px; font-size: .5rem; }
   .client-area-header i { transform: scale(.9); }
-  .instagram-button { display: none; }
   .menu-toggle { display: block; }
-  .whatsapp-button, .instagram-button { width: 42px; height: 42px; }
+  .whatsapp-button { width: 42px; height: 42px; }
   .hero { padding: 116px 21px 92px; gap: 48px; }
   .hero::before { width: 110%; right: -63%; }
   h1 { font-size: clamp(3.2rem, 15vw, 4.3rem); }

@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Percorso di attivazione di FATTO! dopo il mese di prova gratuita.">
+  <meta name="theme-color" content="#071f35">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" href="logo-fatto.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="redesign.css?v=20260917g">
+  <title>Continua con FATTO! — Attivazione</title>
+</head>
+<body class="fatto-redesign rd-activation-page">
+  <header class="rd-header" data-header>
+    <a class="rd-brand" href="index.html" aria-label="FATTO!, torna alla home"><img src="logo-fatto.svg" alt=""><span>FATTO!</span></a>
+    <nav class="rd-nav rd-activation-nav" aria-label="Navigazione principale">
+      <a href="index.html#funzioni-complete">Funzioni</a>
+      <a href="index.html#metodo">Metodo</a>
+      <a href="index.html#prova">Prova gratuita</a>
+    </nav>
+    <div class="rd-header-actions">
+      <a class="rd-login" href="https://gestionale.fattoconsulting.it/accesso" target="_blank" rel="noopener noreferrer">Accedi</a>
+      <a class="rd-trial-button rd-trial-link" href="index.html#prova">Torna alla prova</a>
+      <button class="rd-menu-toggle" type="button" data-menu-toggle aria-label="Apri il menu" aria-expanded="false"><span></span><span></span></button>
+    </div>
+  </header>
+
+  <aside class="rd-mobile-menu" data-mobile-menu aria-hidden="true">
+    <nav aria-label="Menu mobile">
+      <a href="index.html"><small>01</small> Home</a>
+      <a href="index.html#funzioni-complete"><small>02</small> Funzioni</a>
+      <a href="index.html#metodo"><small>03</small> Metodo</a>
+      <a href="index.html#prova"><small>04</small> Prova gratuita</a>
+      <a href="https://gestionale.fattoconsulting.it/accesso" target="_blank" rel="noopener noreferrer"><small>↗</small> Accesso clienti</a>
+    </nav>
+    <div class="rd-mobile-contact"><p>HAI BISOGNO DI AIUTO?</p><a data-whatsapp data-message="Salve, vorrei ricevere informazioni sull'attivazione di FATTO! dopo il mese di prova." href="#">Scrivici su WhatsApp</a></div>
+  </aside>
+
+  <main class="rd-activation-main">
+    <section class="rd-activation-hero">
+      <a class="rd-activation-back" href="index.html#prova">← Torna al sito</a>
+      <div class="rd-activation-progress" aria-label="Percorso di attivazione">
+        <span class="done"><i>✓</i><b>Prova gratuita</b><small>30 giorni per conoscerlo</small></span>
+        <em></em>
+        <span class="current"><i>2</i><b>Attivazione</b><small>Piano e pagamento</small></span>
+        <em></em>
+        <span><i>3</i><b>Il tuo gestionale</b><small>Continui con lo stesso account</small></span>
+      </div>
+
+      <div class="rd-activation-grid">
+        <div class="rd-activation-copy" data-reveal>
+          <p class="rd-kicker"><span></span> DOPO IL MESE GRATUITO</p>
+          <h1>Continua senza<br><em>ricominciare da zero.</em></h1>
+          <p>La configurazione, le camere e il lavoro impostato durante la prova restano nel tuo account. Confermi il piano, completi il pagamento e torni direttamente nel gestionale.</p>
+          <ul>
+            <li><i>✓</i><span><b>Nessuna nuova installazione</b><small>Usi lo stesso accesso creato per la prova</small></span></li>
+            <li><i>✓</i><span><b>Dati e configurazione restano con te</b><small>Non devi reinserire struttura, camere e collaboratori</small></span></li>
+            <li><i>✓</i><span><b>Rinnovo sempre trasparente</b><small>Importo, periodicità e condizioni sono visibili prima della conferma</small></span></li>
+          </ul>
+        </div>
+
+        <section class="rd-payment-card" data-reveal aria-labelledby="payment-title">
+          <div class="rd-payment-head"><img src="logo-fatto.svg" alt=""><span><small>IL TUO PIANO</small><h2 id="payment-title">Pro</h2></span><em>DOPO LA PROVA</em></div>
+          <div class="rd-plan-summary"><span><b>Gestionale completo</b><small>Una struttura fino a 6 camere · €390/anno</small></span><strong>DOPO LA PROVA<br><i>€39/mese</i></strong></div>
+          <ul><li>Funzioni operative e aggiornamenti</li><li>Guida ospite digitale</li><li>Supporto e configurazione iniziale</li></ul>
+          <form class="rd-live-payment" data-activation-checkout action="https://gestionale.fattoconsulting.it/api/billing/checkout" method="post">
+            <input name="plan" type="hidden" value="pro">
+            <input name="interval" type="hidden" value="month" data-activation-interval-field>
+            <input name="trialDays" type="hidden" value="0">
+            <input name="requestId" type="hidden" value="" data-activation-request-id>
+            <div class="rd-live-payment-head"><span><i>✓</i><b>Pagamento sicuro</b></span><small>STRIPE</small></div>
+            <div class="demo-billing-toggle" role="group" aria-label="Periodicità dell'abbonamento"><button class="active" type="button" data-activation-interval="month">Mensile</button><button type="button" data-activation-interval="year">Annuale <small>risparmi</small></button></div>
+            <p data-activation-renewal>€39 al mese. Il rinnovo può essere annullato dall’area clienti.</p>
+            <label class="demo-consent rd-payment-consent"><input name="terms" type="checkbox" value="accepted" required><span>Ho letto e accetto le <a href="condizioni.html" target="_blank" rel="noopener noreferrer">condizioni di abbonamento</a> e l’<a href="privacy.html" target="_blank" rel="noopener noreferrer">informativa privacy</a></span></label>
+            <button class="rd-payment-submit" type="submit" disabled><span data-activation-submit-label>Continua al pagamento · €39/mese</span><b>→</b></button>
+            <small>I dati della carta saranno inseriti esclusivamente nella pagina Stripe.</small>
+          </form>
+          <a class="rd-payment-help" data-whatsapp data-message="Salve, ho terminato la prova gratuita e vorrei parlare dell'attivazione di FATTO! per il mio B&B." href="#">Parliamo dell'attivazione su WhatsApp <span>→</span></a>
+        </section>
+      </div>
+    </section>
+
+    <section class="rd-access-bridge">
+      <div data-reveal><p>DOPO LA CONFERMA</p><h2>Il pagamento sblocca<br><em>la continuità del tuo account.</em></h2></div>
+      <div class="rd-access-card" data-reveal><span><i>✓</i><small>ACCOUNT ATTIVO</small></span><h3>Hai già completato l'attivazione?</h3><p>Entra nell'area riservata con le credenziali personali e continua a usare FATTO!.</p><a href="https://gestionale.fattoconsulting.it/accesso" target="_blank" rel="noopener noreferrer">Accedi al gestionale <span>↗</span></a></div>
+    </section>
+  </main>
+
+  <footer class="rd-footer rd-compact-footer">
+    <div class="rd-footer-top"><div class="rd-footer-brand"><a href="index.html"><img src="logo-fatto.svg" alt=""><span>FATTO!</span></a><p>Regia operativa e digitale per piccoli B&amp;B.</p></div><div class="rd-footer-column"><b>Supporto</b><a data-whatsapp data-message="Salve, ho bisogno di assistenza per l'attivazione di FATTO!." href="#">WhatsApp</a><a data-email href="#">fattoconsulting@gmail.com</a></div><div class="rd-footer-column"><b>Collegamenti</b><a href="index.html">Sito FATTO!</a><a href="privacy.html">Privacy e cookie</a><a href="condizioni.html">Condizioni di abbonamento</a><a href="https://gestionale.fattoconsulting.it/accesso" target="_blank" rel="noopener noreferrer">Accesso clienti</a></div></div>
+    <div class="rd-footer-bottom"><span>© 2026 FATTO! · Giuseppe Vadalà</span><span>Reggio Calabria</span><a href="index.html">Torna alla Home ↑</a></div>
+  </footer>
+
+  <script src="script.js?v=20260917g"></script>
+  <script src="redesign.js?v=20260917a"></script>
+</body>
+</html>

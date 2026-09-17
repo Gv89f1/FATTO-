@@ -37,27 +37,92 @@ mobileMenu?.querySelectorAll("a").forEach((link) => {
 
 const demoModal = document.querySelector("[data-demo-modal]");
 const demoDialog = demoModal?.querySelector(".demo-dialog");
-const demoForm = demoModal?.querySelector("[data-demo-form]");
-const demoSuccess = demoModal?.querySelector("[data-demo-success]");
-const demoError = demoModal?.querySelector("[data-demo-error]");
-const demoFormNote = demoModal?.querySelector("[data-demo-form-note]");
-const demoSuccessName = demoModal?.querySelector("[data-demo-success-name]");
-const demoSuccessEmail = demoModal?.querySelector("[data-demo-success-email]");
-const demoEndpoint = String(window.FATTO_LEAD_CONFIG?.endpoint || "").trim();
-const demoEndpointReady = /^https:\/\/script\.google\.com\/macros\/s\/[a-zA-Z0-9_-]+\/exec$/.test(demoEndpoint);
+const demoPackages = demoModal?.querySelector("[data-demo-packages]");
+const checkoutView = demoModal?.querySelector("[data-checkout-view]");
+const checkoutForm = demoModal?.querySelector("[data-checkout-form]");
+const checkoutPlanField = demoModal?.querySelector("[data-checkout-plan-field]");
+const checkoutIntervalField = demoModal?.querySelector("[data-checkout-interval-field]");
+const checkoutTrialField = demoModal?.querySelector("[data-checkout-trial-field]");
+const checkoutRequestId = demoModal?.querySelector("[data-checkout-request-id]");
+const checkoutError = demoModal?.querySelector("[data-checkout-error]");
+const checkoutConsent = checkoutForm?.elements.namedItem("terms");
+const checkoutSubmit = checkoutForm?.querySelector(".demo-submit");
 let demoReturnFocus = null;
-let demoOpenedAt = 0;
+let selectedCheckoutPlan = "pro";
 
-if (demoFormNote && !demoEndpointReady) {
-  demoFormNote.innerHTML = "<b>Collegamento da completare:</b> il questionario è pronto, ma va ancora inserito l’indirizzo dell’automazione Google.";
+const checkoutPlans = {
+  start: {
+    name: "Start",
+    description: "Le funzioni essenziali per organizzare il B&B. Il pagamento avviene nella pagina sicura di Stripe e l’accesso si attiva dopo la conferma.",
+    month: { price: "€19", note: "al mese", renewal: "Addebito di €19 oggi, poi rinnovo mensile. Puoi annullare il rinnovo dall’area clienti." },
+    year: { price: "€190", note: "all’anno", renewal: "Addebito di €190 oggi per 12 mesi. Risparmi €38 rispetto al pagamento mensile." }
+  },
+  pro: {
+    name: "Pro",
+    description: "30 giorni gratuiti, poi scegli se continuare. Inserirai i dati di pagamento soltanto nella pagina sicura di Stripe.",
+    month: { price: "€39", note: "al mese dopo 30 giorni gratis", renewal: "Oggi €0. Il primo addebito di €39 avverrà al termine dei 30 giorni, salvo annullamento precedente." },
+    year: { price: "€390", note: "all’anno dopo 30 giorni gratis", renewal: "Oggi €0. Dopo 30 giorni saranno addebitati €390 per 12 mesi, salvo annullamento precedente." }
+  }
+};
+
+function createCheckoutRequestId() {
+  return globalThis.crypto?.randomUUID?.() || `fatto-${Date.now()}-${Math.random().toString(36).slice(2, 12)}`;
+}
+
+function syncCheckoutConsent() {
+  if (!(checkoutConsent instanceof HTMLInputElement) || !checkoutSubmit) return;
+  checkoutSubmit.disabled = !checkoutConsent.checked;
+  checkoutSubmit.removeAttribute("data-loading");
 }
 
 function resetDemoForm() {
-  demoForm?.reset();
-  demoForm?.querySelectorAll("[aria-invalid]").forEach((field) => field.removeAttribute("aria-invalid"));
-  if (demoError) demoError.hidden = true;
-  if (demoSuccess) demoSuccess.hidden = true;
-  if (demoForm) demoForm.hidden = false;
+  checkoutForm?.reset();
+  syncCheckoutConsent();
+  if (checkoutError) checkoutError.hidden = true;
+  if (demoPackages) demoPackages.hidden = false;
+  if (checkoutView) checkoutView.hidden = true;
+  demoDialog?.setAttribute("aria-labelledby", "demo-packages-title");
+  demoDialog?.setAttribute("aria-describedby", "demo-packages-description");
+}
+
+function updateCheckout(interval = "month") {
+  const plan = checkoutPlans[selectedCheckoutPlan] || checkoutPlans.pro;
+  const billing = plan[interval] || plan.month;
+  if (checkoutIntervalField) checkoutIntervalField.value = interval;
+  demoModal?.querySelectorAll("[data-billing-interval]").forEach((button) => button.classList.toggle("active", button.dataset.billingInterval === interval));
+  const name = demoModal?.querySelector("[data-checkout-plan-name]");
+  const summaryName = demoModal?.querySelector("[data-checkout-summary-name]");
+  const description = demoModal?.querySelector("[data-checkout-description]");
+  const price = demoModal?.querySelector("[data-checkout-price]");
+  const priceNote = demoModal?.querySelector("[data-checkout-price-note]");
+  const renewal = demoModal?.querySelector("[data-checkout-renewal]");
+  const submitLabel = checkoutForm?.querySelector(".demo-submit span");
+  if (name) name.textContent = plan.name;
+  if (summaryName) summaryName.textContent = plan.name;
+  if (description) description.textContent = plan.description;
+  if (price) price.textContent = billing.price;
+  if (priceNote) priceNote.textContent = billing.note;
+  if (renewal) renewal.textContent = billing.renewal;
+  if (submitLabel) submitLabel.textContent = selectedCheckoutPlan === "pro" ? "Inizia 30 giorni gratuiti" : "Continua al pagamento sicuro";
+}
+
+function showCheckout(plan = "pro") {
+  selectedCheckoutPlan = checkoutPlans[plan] ? plan : "pro";
+  if (checkoutPlanField) checkoutPlanField.value = selectedCheckoutPlan;
+  if (checkoutTrialField) checkoutTrialField.value = selectedCheckoutPlan === "pro" ? "30" : "0";
+  if (checkoutRequestId) checkoutRequestId.value = createCheckoutRequestId();
+  if (demoPackages) demoPackages.hidden = true;
+  if (checkoutView) checkoutView.hidden = false;
+  if (checkoutError) checkoutError.hidden = true;
+  checkoutForm?.reset();
+  if (checkoutPlanField) checkoutPlanField.value = selectedCheckoutPlan;
+  if (checkoutTrialField) checkoutTrialField.value = selectedCheckoutPlan === "pro" ? "30" : "0";
+  if (checkoutRequestId) checkoutRequestId.value = createCheckoutRequestId();
+  updateCheckout("month");
+  syncCheckoutConsent();
+  demoDialog?.setAttribute("aria-labelledby", "checkout-title");
+  demoDialog?.setAttribute("aria-describedby", "checkout-description");
+  window.setTimeout(() => demoModal?.querySelector("[data-billing-interval]")?.focus(), 60);
 }
 
 function setDemo(open, trigger = null) {
@@ -65,13 +130,12 @@ function setDemo(open, trigger = null) {
 
   if (open) {
     setMenu(false);
-    if (demoSuccess && !demoSuccess.hidden) resetDemoForm();
-    demoOpenedAt = Date.now();
+    resetDemoForm();
     demoReturnFocus = trigger || document.activeElement;
     demoModal.classList.add("open");
     demoModal.setAttribute("aria-hidden", "false");
     document.body.classList.add("demo-open");
-    window.setTimeout(() => demoForm?.querySelector("input")?.focus(), 80);
+    window.setTimeout(() => demoModal.querySelector("[data-checkout-plan]")?.focus(), 80);
     return;
   }
 
@@ -85,107 +149,52 @@ document.querySelectorAll("[data-demo-open]").forEach((button) => {
   button.addEventListener("click", () => setDemo(true, button));
 });
 
+demoModal?.querySelectorAll("[data-checkout-plan]").forEach((button) => {
+  button.addEventListener("click", () => showCheckout(button.dataset.checkoutPlan));
+});
+
+demoModal?.querySelectorAll("[data-billing-interval]").forEach((button) => {
+  button.addEventListener("click", () => updateCheckout(button.dataset.billingInterval));
+});
+
+demoModal?.querySelector("[data-demo-plans-back]")?.addEventListener("click", () => {
+  resetDemoForm();
+  demoModal.querySelector("[data-checkout-plan]")?.focus();
+});
+
 demoModal?.querySelectorAll("[data-demo-close]").forEach((button) => {
   button.addEventListener("click", () => setDemo(false));
 });
 
-demoForm?.querySelectorAll("input[required]").forEach((input) => {
-  input.addEventListener("input", () => {
-    input.setCustomValidity("");
-    input.removeAttribute("aria-invalid");
-  });
-  input.addEventListener("change", () => {
-    input.setCustomValidity("");
-    input.removeAttribute("aria-invalid");
-  });
-});
-
-demoForm?.addEventListener("submit", async (event) => {
-  event.preventDefault();
-  const phoneField = demoForm.elements.namedItem("phone");
-  if (phoneField instanceof HTMLInputElement && !/^[0-9+().\s-]{7,30}$/.test(phoneField.value.trim())) {
-    phoneField.setCustomValidity("Inserisci un numero di telefono valido.");
-  }
-  const requiredFields = [...demoForm.querySelectorAll("input[required]")];
-  const invalidFields = requiredFields.filter((field) => !field.validity.valid);
-
-  requiredFields.forEach((field) => {
-    if (field.validity.valid) field.removeAttribute("aria-invalid");
-    else field.setAttribute("aria-invalid", "true");
-  });
-
-  if (invalidFields.length) {
-    if (demoError) {
-      demoError.textContent = "Controlla i campi evidenziati prima di continuare.";
-      demoError.hidden = false;
-    }
-    invalidFields[0].focus();
+checkoutForm?.addEventListener("submit", (event) => {
+  if (!(checkoutConsent instanceof HTMLInputElement) || !checkoutConsent.checked) {
+    event.preventDefault();
+    if (checkoutError) checkoutError.hidden = false;
+    checkoutConsent?.focus?.();
     return;
   }
-
-  if (!demoEndpointReady) {
-    if (demoError) {
-      demoError.textContent = "Il collegamento delle richieste non è ancora attivo. Puoi contattarci tramite WhatsApp.";
-      demoError.hidden = false;
-    }
-    return;
+  if (checkoutError) checkoutError.hidden = true;
+  const label = checkoutSubmit?.querySelector("span");
+  if (checkoutSubmit) {
+    checkoutSubmit.dataset.loading = "true";
+    checkoutSubmit.disabled = true;
   }
-
-  if (demoError) demoError.hidden = true;
-  const submitButton = demoForm.querySelector(".demo-submit");
-  const submitLabel = submitButton?.querySelector("span");
-  const originalLabel = submitLabel?.textContent || "Invia la richiesta";
-  const formData = new FormData(demoForm);
-  const firstName = String(formData.get("firstName") || "").trim();
-  const email = String(formData.get("email") || "").trim();
-  const requestId = globalThis.crypto?.randomUUID?.() || `fatto-${Date.now()}-${Math.random().toString(36).slice(2, 10)}`;
-  const payload = new URLSearchParams({
-    firstName,
-    lastName: String(formData.get("lastName") || "").trim(),
-    phone: String(formData.get("phone") || "").trim(),
-    email,
-    website: String(formData.get("website") || ""),
-    privacyAccepted: String(formData.get("privacy") === "on"),
-    privacyVersion: "12 settembre 2026",
-    elapsedMs: String(Math.max(Date.now() - (demoOpenedAt || Date.now()), 0)),
-    requestId,
-    source: `${window.location.origin}${window.location.pathname}`
-  });
-
-  if (submitButton) submitButton.disabled = true;
-  if (submitLabel) submitLabel.textContent = "Invio in corso…";
-
-  try {
-    await fetch(demoEndpoint, {
-      method: "POST",
-      mode: "no-cors",
-      body: payload,
-      referrerPolicy: "strict-origin-when-cross-origin"
-    });
-
-    demoForm.hidden = true;
-    if (demoSuccessName) demoSuccessName.textContent = `${firstName}!`;
-    if (demoSuccessEmail) demoSuccessEmail.textContent = email;
-    if (demoSuccess) {
-      demoSuccess.hidden = false;
-      demoSuccess.querySelector("button")?.focus();
-    }
-  } catch (error) {
-    if (demoError) {
-      demoError.textContent = "Non siamo riusciti a inviare la richiesta. Riprova oppure contattaci tramite WhatsApp.";
-      demoError.hidden = false;
-    }
-  } finally {
-    if (submitButton) submitButton.disabled = false;
-    if (submitLabel) submitLabel.textContent = originalLabel;
-  }
+  if (label) label.textContent = "Apertura checkout…";
 });
 
-demoModal?.querySelector("[data-demo-reset]")?.addEventListener("click", () => {
-  resetDemoForm();
-  demoOpenedAt = Date.now();
-  demoForm?.querySelector("input")?.focus();
+checkoutConsent?.addEventListener("change", () => {
+  syncCheckoutConsent();
+  if (checkoutError) checkoutError.hidden = true;
 });
+
+if (new URLSearchParams(window.location.search).get("pagamento") === "annullato") {
+  setDemo(true);
+  showCheckout("pro");
+  if (checkoutError) {
+    checkoutError.textContent = "Pagamento annullato: non è stato effettuato alcun addebito. Puoi riprendere quando vuoi.";
+    checkoutError.hidden = false;
+  }
+}
 
 document.addEventListener("keydown", (event) => {
   if (event.key === "Escape") {
@@ -194,7 +203,7 @@ document.addEventListener("keydown", (event) => {
   }
 
   if (event.key === "Tab" && demoModal?.classList.contains("open") && demoDialog) {
-    const focusable = [...demoDialog.querySelectorAll("button:not([hidden]), input:not([hidden]), a[href]")]
+    const focusable = [...demoDialog.querySelectorAll("button:not([hidden]):not(:disabled), input:not([hidden]):not(:disabled), a[href]")]
       .filter((element) => !element.closest("[hidden]") && !element.disabled);
     if (!focusable.length) return;
     const first = focusable[0];
@@ -208,3 +217,50 @@ document.addEventListener("keydown", (event) => {
     }
   }
 });
+
+const activationCheckout = document.querySelector("[data-activation-checkout]");
+const activationIntervalField = activationCheckout?.querySelector("[data-activation-interval-field]");
+const activationRequestId = activationCheckout?.querySelector("[data-activation-request-id]");
+const activationRenewal = activationCheckout?.querySelector("[data-activation-renewal]");
+const activationSubmitLabel = activationCheckout?.querySelector("[data-activation-submit-label]");
+const activationConsent = activationCheckout?.elements.namedItem("terms");
+const activationSubmit = activationCheckout?.querySelector(".rd-payment-submit");
+
+function syncActivationConsent() {
+  if (!(activationConsent instanceof HTMLInputElement) || !activationSubmit) return;
+  activationSubmit.disabled = !activationConsent.checked;
+  activationSubmit.removeAttribute("data-loading");
+}
+
+function updateActivationCheckout(interval = "month") {
+  if (activationIntervalField) activationIntervalField.value = interval;
+  activationCheckout?.querySelectorAll("[data-activation-interval]").forEach((button) => button.classList.toggle("active", button.dataset.activationInterval === interval));
+  if (activationRenewal) activationRenewal.textContent = interval === "year"
+    ? "€390 per 12 mesi. Risparmi €78 rispetto al pagamento mensile."
+    : "€39 al mese. Il rinnovo può essere annullato dall’area clienti.";
+  if (activationSubmitLabel) activationSubmitLabel.textContent = interval === "year"
+    ? "Continua al pagamento · €390/anno"
+    : "Continua al pagamento · €39/mese";
+}
+
+activationCheckout?.querySelectorAll("[data-activation-interval]").forEach((button) => {
+  button.addEventListener("click", () => updateActivationCheckout(button.dataset.activationInterval));
+});
+
+activationCheckout?.addEventListener("submit", (event) => {
+  if (!(activationConsent instanceof HTMLInputElement) || !activationConsent.checked) {
+    event.preventDefault();
+    activationConsent?.focus?.();
+    return;
+  }
+  if (activationRequestId) activationRequestId.value = createCheckoutRequestId();
+  if (activationSubmit) {
+    activationSubmit.dataset.loading = "true";
+    activationSubmit.disabled = true;
+  }
+  if (activationSubmitLabel) activationSubmitLabel.textContent = "Apertura checkout…";
+});
+
+activationConsent?.addEventListener("change", syncActivationConsent);
+syncActivationConsent();
+if (activationRequestId) activationRequestId.value = createCheckoutRequestId();

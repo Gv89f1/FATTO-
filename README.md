@@ -9,6 +9,7 @@ Questa cartella contiene la versione completa del sito statico FATTO!
 - `metodo.html`: metodo di lavoro
 - `gestionale.html`: presentazione, prezzo e accesso clienti di FATTO! Gestionale
 - `privacy.html`: privacy, cookie e note legali
+- `condizioni.html`: condizioni di prova, rinnovo e abbonamento
 
 La prima area dei servizi, **Personalizzazione e cura del B&B**, comprende sito web, identità visiva, contenuti, presenza su Google e marketing locale.
 
@@ -29,21 +30,21 @@ La prima area dei servizi, **Personalizzazione e cura del B&B**, comprende sito 
 
 ## FATTO! Gestionale
 
-- Attivazione e proposta definite dopo la demo, senza prezzo pubblico fisso
-- Attivazione iniziale: assistita tramite WhatsApp
+- Piano Start: €19/mese o €190/anno
+- Piano Pro: €39/mese o €390/anno, con 30 giorni gratuiti per i nuovi clienti
+- Piano Su misura: preventivo dedicato a partire da €99/mese
+- Checkout protetto ospitato da Stripe; il sito non raccoglie dati carta
+- Licenza automatica soltanto dopo la conferma verificata del checkout
 - Accesso clienti protetto: `https://gestionale.fattoconsulting.it/accesso`
 - Il gestionale è una web app installabile: l’utente accede al proprio account e la installa da lì, senza un file pubblico da scaricare.
-- La Versione 25 del gestionale verifica l’abbonamento sul server ed è pronta in locale; prima di rendere pubblico il nuovo collegamento va pubblicata al posto della Versione 24 attualmente online.
+- La Versione 29 del gestionale verifica l’abbonamento sul server ed è pubblicata in modo indipendente su Cloudflare Pages. Il sottodominio `gestionale.fattoconsulting.it` punta direttamente a questa versione ed è totalmente indipendente.
 
-## Questionario demo
+## Pagamenti
 
-- Il pulsante **Richiedi una demo gratuita** apre un questionario con nome, cognome, telefono, email e presa visione della privacy.
-- Il sistema predisposto salva le richieste in un foglio Google privato e invia una conferma al cliente e una notifica a FATTO!.
-- L’automazione pronta da copiare si trova in `google-apps-script/Code.gs`.
-- L’indirizzo dell’automazione va inserito in `form-config.js` dopo la prima configurazione.
-- La procedura completa è nel file `ATTIVA-RICHIESTE-DEMO.md`.
-- La checklist interna per gestire correttamente i dati è nel file `PRIVACY-OPERATIVA-RICHIESTE.md`.
-- Il modulo include validazione, campo antispam invisibile, limite sugli invii ripetuti e registrazione della versione privacy.
+- I pulsanti Start e Pro inviano al checkout sicuro del sottodominio gestionale.
+- Il piano Pro richiede il metodo di pagamento ma addebita soltanto dopo i 30 giorni gratuiti, salvo annullamento.
+- Rinnovi, pagamenti non riusciti e disdette aggiornano lo stato della licenza tramite webhook Stripe firmato.
+- Checkout, quattro Price ID, webhook e portale clienti sono verificati in modalità test. Il passaggio agli addebiti reali resta separato e richiede l’attivazione live di Stripe e la configurazione fiscale completa.
 
 ## Dominio e pubblicazione
 

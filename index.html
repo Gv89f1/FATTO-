@@ -3,151 +3,567 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="FATTO! organizza e valorizza il tuo B&amp;B: identità digitale, esperienza degli ospiti, controllo dei risultati e operazioni quotidiane.">
-  <meta name="theme-color" content="#082a44">
+  <meta name="description" content="FATTO! riunisce gestionale, organizzazione e servizi su misura per rendere il tuo B&B più semplice da gestire e più forte sul mercato.">
+  <meta name="theme-color" content="#071f35">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="it_IT">
   <meta property="og:site_name" content="FATTO! Consulting">
   <meta property="og:url" content="https://www.fattoconsulting.it/">
-  <meta property="og:title" content="FATTO! — Dai più valore alla tua attività">
-  <meta property="og:description" content="Servizi operativi e digitali per organizzare, valorizzare e far crescere il tuo B&amp;B.">
+  <meta property="og:title" content="FATTO! — Dai più valore al tuo B&B">
+  <meta property="og:description" content="Un unico sistema per organizzare il lavoro, seguire gli ospiti e far crescere il tuo B&B.">
   <meta property="og:image" content="https://www.fattoconsulting.it/og.png?v=20260916">
-  <meta property="og:image:url" content="https://www.fattoconsulting.it/og.png?v=20260916">
-  <meta property="og:image:secure_url" content="https://www.fattoconsulting.it/og.png?v=20260916">
-  <meta property="og:image:type" content="image/png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="FATTO! — Dai più valore alla tua attività">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="FATTO! — Dai più valore alla tua attività">
-  <meta name="twitter:description" content="Servizi operativi e digitali per organizzare, valorizzare e far crescere il tuo B&amp;B.">
+  <meta name="twitter:title" content="FATTO! — Dai più valore al tuo B&B">
+  <meta name="twitter:description" content="Un unico sistema per organizzare il lavoro, seguire gli ospiti e far crescere il tuo B&B.">
   <meta name="twitter:image" content="https://www.fattoconsulting.it/og.png?v=20260916">
-  <meta name="twitter:image:alt" content="FATTO! — Dai più valore alla tua attività">
-  <link rel="image_src" href="https://www.fattoconsulting.it/og.png?v=20260916">
   <link rel="canonical" href="https://www.fattoconsulting.it/">
-  <title>FATTO! — Dai più valore al tuo B&amp;B</title>
   <link rel="icon" href="logo-fatto.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="style.css?v=20260912b">
+  <link rel="stylesheet" href="redesign.css?v=20260917g">
+  <title>FATTO! — Dai più valore al tuo B&B</title>
 </head>
-<body class="home-page" data-page="home">
-  <header class="site-header">
-    <a class="brand" href="index.html" aria-label="FATTO!, torna alla home">
-      <img class="brand-logo" src="logo-fatto.svg" alt="">
-      <span class="brand-name">FATTO!</span>
+<body class="fatto-redesign">
+  <header class="rd-header" data-header>
+    <a class="rd-brand" href="#inizio" aria-label="FATTO!, torna all'inizio">
+      <img src="logo-fatto.svg" alt="">
+      <span>FATTO!</span>
     </a>
 
-    <nav class="primary-nav" aria-label="Navigazione principale">
-      <a class="active" href="index.html" aria-current="page">Home</a>
-      <a href="servizi.html">Servizi</a>
-      <a href="metodo.html">Metodo</a>
-      <a class="nav-product" href="gestionale.html">Gestionale</a>
+    <nav class="rd-nav" aria-label="Navigazione principale">
+      <div class="rd-nav-group">
+        <button type="button" data-dropdown-toggle aria-expanded="false">
+          Funzioni <span aria-hidden="true">⌄</span>
+        </button>
+        <div class="rd-dropdown" data-dropdown>
+          <a href="#gestione"><small>01</small><span><b>Gestione quotidiana</b><em>Prenotazioni, calendario e operazioni</em></span></a>
+          <a href="#funzioni-complete" data-feature-link="pulizie"><small>02</small><span><b>Pulizie programmate</b><em>Turni, responsabili e camere pronte</em></span></a>
+          <a href="#funzioni-complete" data-feature-link="guida"><small>03</small><span><b>Guida ospite</b><em>Informazioni utili sempre disponibili</em></span></a>
+          <a href="#funzioni-complete" data-feature-link="news"><small>04</small><span><b>News e bonus</b><em>Novità, scadenze e fonti ufficiali</em></span></a>
+        </div>
+      </div>
+      <a href="#tutto-in-uno">Tutto in uno</a>
+      <a href="#per-chi">Per chi</a>
+      <a href="#metodo">Metodo</a>
+      <a class="rd-nav-highlight" href="#funzioni-complete">Gestionale</a>
     </nav>
 
-    <div class="header-actions">
-      <a class="client-area-header" href="https://gestionale.fattoconsulting.it/accesso" target="_blank" rel="noopener noreferrer"><i aria-hidden="true"></i><span>Accesso clienti</span></a>
-      <button class="menu-toggle" type="button" data-menu-toggle aria-label="Apri il menu" aria-expanded="false">
+    <div class="rd-header-actions">
+      <a class="rd-login" href="https://gestionale.fattoconsulting.it/accesso" target="_blank" rel="noopener noreferrer">Accedi</a>
+      <button class="rd-trial-button" type="button" data-demo-open>Prova 1 mese gratis</button>
+      <button class="rd-menu-toggle" type="button" data-menu-toggle aria-label="Apri il menu" aria-expanded="false">
         <span></span><span></span>
       </button>
-      <a class="instagram-button" href="https://www.instagram.com/fattoconsulting/" target="_blank" rel="noopener noreferrer" aria-label="Segui FATTO! su Instagram">
-        <span class="instagram-glyph" aria-hidden="true"></span>
-      </a>
-      <a class="whatsapp-button" data-whatsapp data-message="Salve, vorrei richiedere una consulenza gratuita sui servizi FATTO! per il mio B&amp;B." href="#" aria-label="Contatta FATTO! su WhatsApp">
-        <img src="whatsapp.svg" alt="">
-      </a>
     </div>
   </header>
 
-  <aside class="mobile-menu" data-mobile-menu aria-hidden="true">
+  <aside class="rd-mobile-menu" data-mobile-menu aria-hidden="true">
     <nav aria-label="Menu mobile">
-      <a href="index.html"><small>01</small> Home</a>
-      <a href="servizi.html"><small>02</small> Servizi</a>
-      <a href="metodo.html"><small>03</small> Metodo</a>
-      <a href="gestionale.html"><small>04</small> Gestionale</a>
-      <a class="mobile-login-link" href="https://gestionale.fattoconsulting.it/accesso" target="_blank" rel="noopener noreferrer"><small>↗</small> Accesso clienti</a>
+      <a href="#gestione"><small>01</small> Funzioni</a>
+      <a href="#tutto-in-uno"><small>02</small> Tutto in uno</a>
+      <a href="#per-chi"><small>03</small> Per chi</a>
+      <a href="#metodo"><small>04</small> Metodo</a>
+      <a href="#funzioni-complete"><small>05</small> Gestionale</a>
+      <a href="https://gestionale.fattoconsulting.it/accesso" target="_blank" rel="noopener noreferrer"><small>↗</small> Accesso clienti</a>
     </nav>
-    <div class="mobile-contact">
-      <span>PARLIAMO DEL TUO B&amp;B</span>
-      <a data-whatsapp data-message="Salve, vorrei richiedere una consulenza gratuita sui servizi FATTO! per il mio B&amp;B." href="#">Scrivici su WhatsApp →</a>
-      <a data-email href="#">fattoconsulting@gmail.com</a>
-      <a href="https://www.instagram.com/fattoconsulting/" target="_blank" rel="noopener noreferrer">Instagram · @fattoconsulting ↗</a>
-      <a class="mobile-privacy" href="privacy.html">Privacy, cookie e note legali</a>
+    <div class="rd-mobile-contact">
+      <p>UN MESE PER CONOSCERE IL GESTIONALE</p>
+      <button type="button" data-demo-open data-mobile-close>Richiedi la prova gratuita <span>→</span></button>
+      <a data-whatsapp data-message="Salve, vorrei ricevere informazioni sulla prova gratuita di un mese di FATTO! per il mio B&B." href="#">Scrivici su WhatsApp</a>
     </div>
   </aside>
 
-  <main class="home-main">
-    <section class="hero">
-      <div class="hero-copy">
-        <p class="eyebrow"><span></span> SERVIZI OPERATIVI E DIGITALI PER B&amp;B</p>
-        <h1>Dai più <em>valore</em><br>alla tua attività</h1>
-        <p class="intro">Tu concentrati sull’ospitalità. Noi colleghiamo presenza online, esperienza degli ospiti, numeri e lavoro quotidiano per rendere il tuo B&amp;B più semplice da gestire e più forte sul mercato.</p>
-
-        <div class="action-row">
-          <a class="primary-cta" href="servizi.html">
-            <span>Scopri come possiamo aiutarti</span>
-            <i aria-hidden="true">→</i>
-          </a>
-          <span class="action-note">UN SOLO SISTEMA<br>INTORNO AL TUO B&amp;B</span>
+  <main>
+    <section class="rd-hero" id="inizio">
+      <div class="rd-hero-copy" data-reveal>
+        <p class="rd-kicker"><span></span> IL SISTEMA OPERATIVO PER PICCOLI B&amp;B</p>
+        <h1>Dai più <em>valore</em><br>al tuo B&amp;B.</h1>
+        <p class="rd-hero-intro">Organizza il lavoro, segui meglio gli ospiti e controlla i risultati da un unico spazio, con un supporto costruito intorno alla tua struttura.</p>
+        <div class="rd-hero-actions">
+          <button class="rd-primary-button" type="button" data-demo-open>
+            <span>Provalo gratis per un mese</span><i aria-hidden="true">→</i>
+          </button>
+          <a class="rd-text-link" href="#gestione">Scopri come funziona <span aria-hidden="true">↓</span></a>
         </div>
-
-        <div class="benefit-bar" aria-label="I vantaggi di FATTO!">
-          <article><strong>1</strong><div><b>Connesso</b><small>Ogni parte lavora insieme</small></div></article>
-          <article><strong>2</strong><div><b>Semplice</b><small>Chiaro da usare ogni giorno</small></div></article>
-          <article><strong>3</strong><div><b>Veloce</b><small>Meno passaggi, più controllo</small></div></article>
+        <div class="rd-trial-notes" aria-label="Informazioni sulla prova">
+          <span><i>✓</i> 30 giorni gratuiti</span>
+          <span><i>✓</i> Configurazione guidata</span>
+          <span><i>✓</i> Supporto diretto</span>
         </div>
       </div>
 
-      <div class="bnb-system" aria-label="Il sistema FATTO! collega le aree principali del tuo B&amp;B">
-        <div class="system-topline"><span>IL TUO B&amp;B, TUTTO CONNESSO</span><b><i></i> SISTEMA ATTIVO</b></div>
-
-        <svg class="system-network" viewBox="0 0 660 520" role="img" aria-label="Mappa dei servizi FATTO!">
-          <defs>
-            <linearGradient id="lineFade" x1="0" x2="1">
-              <stop offset="0" stop-color="#b6d8e9" stop-opacity=".2"/>
-              <stop offset=".5" stop-color="#4b9ac2" stop-opacity=".75"/>
-              <stop offset="1" stop-color="#b6d8e9" stop-opacity=".2"/>
-            </linearGradient>
-          </defs>
-          <path class="network-path path-one" pathLength="1" d="M330 260 C405 175 472 128 548 107"/>
-          <path class="network-path path-two" pathLength="1" d="M330 260 C426 246 492 245 579 254"/>
-          <path class="network-path path-three" pathLength="1" d="M330 260 C423 330 470 382 548 421"/>
-          <path class="network-path path-four" pathLength="1" d="M330 260 C245 323 185 371 105 403"/>
-          <ellipse class="orbit-line orbit-a" cx="330" cy="260" rx="112" ry="75"/>
-          <ellipse class="orbit-line orbit-b" cx="330" cy="260" rx="78" ry="116" transform="rotate(42 330 260)"/>
-          <circle class="pulse-ring" cx="330" cy="260" r="56"/>
-          <circle class="pulse-ring pulse-ring-two" cx="330" cy="260" r="83"/>
-        </svg>
-
-        <div class="system-core">
-          <span class="core-ring"></span>
-          <img src="logo-fatto.svg" alt="">
-          <small>FATTO!</small>
+      <div class="rd-product-scene" data-reveal aria-label="Anteprima dimostrativa del gestionale">
+        <span class="rd-scene-label">ANTEPRIMA DEL GESTIONALE</span>
+        <div class="rd-dashboard">
+          <div class="rd-dashboard-sidebar">
+            <div class="rd-mini-brand"><img src="logo-fatto.svg" alt=""><b>FATTO!</b></div>
+            <span class="active"></span><span></span><span></span><span></span><span></span>
+            <i></i>
+          </div>
+          <div class="rd-dashboard-main">
+            <div class="rd-dashboard-top">
+              <div><small>BUONGIORNO, GIUSEPPE</small><b>Il tuo B&amp;B, oggi</b></div>
+              <span>16 SET</span>
+            </div>
+            <div class="rd-kpi-row">
+              <article><small>OCCUPAZIONE</small><b>78%</b><em>+6% questo mese</em></article>
+              <article><small>ARRIVI OGGI</small><b>3</b><em>Tutto pronto</em></article>
+              <article><small>RICAVI MESE</small><b>€ 6.480</b><em>Obiettivo 82%</em></article>
+            </div>
+            <div class="rd-dashboard-grid">
+              <div class="rd-calendar-card">
+                <div class="rd-card-title"><b>Calendario camere</b><span>Settembre</span></div>
+                <div class="rd-calendar-head"><i>15</i><i>16</i><i>17</i><i>18</i><i>19</i><i>20</i></div>
+                <div class="rd-room-line"><small>Ulivo</small><span class="stay-one"></span></div>
+                <div class="rd-room-line"><small>Gelsomino</small><span class="stay-two"></span></div>
+                <div class="rd-room-line"><small>Glicine</small><span class="stay-three"></span></div>
+              </div>
+              <div class="rd-today-card">
+                <div class="rd-card-title"><b>Da fare oggi</b><span>4 attività</span></div>
+                <ul>
+                  <li><i class="done">✓</i><span><b>Check-out · Ulivo</b><small>Completato alle 10:06</small></span></li>
+                  <li><i>2</i><span><b>Pulizia · Gelsomino</b><small>Assegnata a Maria</small></span></li>
+                  <li><i>3</i><span><b>Messaggio pre-arrivo</b><small>Pronto per l'invio</small></span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
-
-        <article class="map-card map-digital">
-          <span class="map-dot"></span><small>01 · IDENTITÀ</small><b>Immagine su misura</b><em>Sito, contenuti e marketing</em>
+        <article class="rd-float-card rd-float-booking">
+          <span>+</span><div><small>NUOVA RICHIESTA DIRETTA</small><b>Camera Glicine · 3 notti</b></div>
         </article>
-        <article class="map-card map-guests">
-          <span class="map-dot"></span><small>02 · OSPITI</small><b>Esperienza più curata</b><em>Informazioni sempre disponibili</em>
+        <article class="rd-float-card rd-float-status">
+          <i></i><div><small>OPERAZIONI</small><b>Struttura sotto controllo</b></div>
         </article>
-        <article class="map-card map-results">
-          <span class="map-dot"></span><small>03 · RISULTATI</small><b>Numeri sotto controllo</b><em>Scelte basate sui dati</em>
-        </article>
-        <article class="map-card map-operations">
-          <span class="map-dot"></span><small>04 · OPERAZIONI</small><b>Giornate più ordinate</b><em>Pulizie, scorte e fornitori</em>
-        </article>
-
-        <div class="system-caption"><span>Un unico punto di controllo</span><b>Più ordine <i>→</i> più valore</b></div>
       </div>
+    </section>
+
+    <section class="rd-value-strip" aria-label="Le aree collegate dal gestionale">
+      <div><span>01</span><b>Prenotazioni</b><small>Ordine fin dal primo contatto</small></div>
+      <div><span>02</span><b>Ospiti</b><small>Informazioni al momento giusto</small></div>
+      <div><span>03</span><b>Operazioni</b><small>Ogni attività sotto controllo</small></div>
+      <div><span>04</span><b>Risultati</b><small>Numeri semplici da capire</small></div>
+    </section>
+
+    <section class="rd-section rd-smart-section" id="gestione">
+      <div class="rd-section-heading" data-reveal>
+        <p class="rd-kicker"><span></span> SEMPLICE DA USARE, CONCRETO OGNI GIORNO</p>
+        <h2>Gestisci in modo<br><em>facile e intelligente.</em></h2>
+        <p>Il sistema mette in relazione ciò che oggi è sparso tra messaggi, calendari, appunti e fogli di calcolo.</p>
+      </div>
+
+      <article class="rd-feature-showcase" data-reveal>
+        <div class="rd-feature-copy">
+          <span class="rd-feature-number">01</span>
+          <p>PRENOTAZIONI E CALENDARIO</p>
+          <h3>Vedi subito cosa succede nella tua struttura.</h3>
+          <p class="rd-feature-description">Arrivi, partenze, camere, richieste e attività operative convivono in una vista chiara. Meno passaggi, meno dimenticanze.</p>
+          <a href="#funzioni-complete">Esplora il gestionale <span>→</span></a>
+        </div>
+        <div class="rd-feature-visual rd-calendar-visual" aria-hidden="true">
+          <div class="rd-visual-window">
+            <div class="rd-visual-bar"><i></i><i></i><i></i><b>Settembre 2026</b></div>
+            <div class="rd-week-grid">
+              <span>LUN<em>14</em></span><span>MAR<em>15</em></span><span class="today">MER<em>16</em></span><span>GIO<em>17</em></span><span>VEN<em>18</em></span>
+            </div>
+            <div class="rd-booking-row"><small>Ulivo</small><i class="booking-a">Rossi · 14—17</i></div>
+            <div class="rd-booking-row"><small>Glicine</small><i class="booking-b">Bianchi · 16—19</i></div>
+            <div class="rd-booking-row"><small>Gelsomino</small><i class="booking-c">Verdi · 18—21</i></div>
+          </div>
+          <span class="rd-visual-badge"><i>✓</i> Nessun conflitto rilevato</span>
+        </div>
+      </article>
+
+      <article class="rd-feature-showcase rd-feature-reverse" id="ospiti" data-reveal>
+        <div class="rd-feature-copy">
+          <span class="rd-feature-number">02</span>
+          <p>OSPITI E COMUNICAZIONI</p>
+          <h3>Ogni ospite riceve attenzione, senza rincorrere i messaggi.</h3>
+          <p class="rd-feature-description">Pre-arrivo, check-in, informazioni utili e follow-up vengono organizzati lungo il soggiorno. Tu mantieni sempre il controllo.</p>
+          <a href="#funzioni-complete" data-feature-link="guida">Scopri l'esperienza ospite <span>→</span></a>
+        </div>
+        <div class="rd-feature-visual rd-message-visual" aria-hidden="true">
+          <div class="rd-phone-shell">
+            <div class="rd-phone-top"><i></i><b>Area ospiti</b><span>•••</span></div>
+            <div class="rd-message received">Buongiorno! A che ora possiamo fare il check-in?</div>
+            <div class="rd-assistant-note"><span>F</span><small>Risposta pronta sulla base degli orari del B&amp;B</small></div>
+            <div class="rd-message sent">Salve Marco, il check-in è disponibile dalle 15:00. Ti invieremo tutte le indicazioni prima dell'arrivo.</div>
+            <div class="rd-message-status">Pronto per la tua conferma <i>✓</i></div>
+          </div>
+          <span class="rd-visual-badge rd-message-badge"><i>3</i> Conversazioni da seguire</span>
+        </div>
+      </article>
+
+      <article class="rd-feature-showcase" id="risultati" data-reveal>
+        <div class="rd-feature-copy">
+          <span class="rd-feature-number">03</span>
+          <p>COSTI E RISULTATI</p>
+          <h3>Trasforma i numeri in decisioni più semplici.</h3>
+          <p class="rd-feature-description">Ricavi, commissioni, spese e andamento delle prenotazioni diventano leggibili, così sai dove intervenire e cosa sta funzionando.</p>
+          <a href="#tutto-in-uno">Guarda tutti gli strumenti <span>→</span></a>
+        </div>
+        <div class="rd-feature-visual rd-results-visual" aria-hidden="true">
+          <div class="rd-results-panel">
+            <div class="rd-results-head"><span><small>RISULTATO DEL MESE</small><b>€ 4.920</b></span><em>+12,4%</em></div>
+            <div class="rd-chart-bars"><i class="bar-1"></i><i class="bar-2"></i><i class="bar-3"></i><i class="bar-4"></i><i class="bar-5"></i><i class="bar-6 active"></i><i class="bar-7"></i></div>
+            <div class="rd-chart-labels"><span>MAR</span><span>APR</span><span>MAG</span><span>GIU</span><span>LUG</span><span>AGO</span><span>SET</span></div>
+            <div class="rd-results-mini"><span><i></i> Ricavi diretti <b>34%</b></span><span><i></i> Commissioni <b>11%</b></span></div>
+          </div>
+          <span class="rd-visual-badge rd-results-badge"><i>↗</i> Obiettivo mensile vicino</span>
+        </div>
+      </article>
+    </section>
+
+    <section class="rd-section rd-product-section" id="funzioni-complete">
+      <div class="rd-section-heading rd-section-heading-centered" data-reveal>
+        <p class="rd-kicker"><span></span> DAL GESTIONALE ALLA GIORNATA REALE</p>
+        <h2>Non solo prenotazioni.<br><em>Il lavoro si muove con te.</em></h2>
+        <p>Il gestionale trasforma partenze, informazioni per gli ospiti e aggiornamenti di settore in attività semplici da vedere e portare a termine.</p>
+      </div>
+
+      <div class="rd-product-tabs" role="tablist" aria-label="Funzioni operative del gestionale" data-reveal>
+        <button class="active" id="feature-tab-pulizie" type="button" role="tab" aria-selected="true" aria-controls="feature-panel-pulizie" data-feature-tab="pulizie"><span>01</span><b>Pulizie programmate</b><small>Dal check-out alla camera pronta</small></button>
+        <button id="feature-tab-guida" type="button" role="tab" aria-selected="false" aria-controls="feature-panel-guida" data-feature-tab="guida"><span>02</span><b>Guida ospite</b><small>Tutto ciò che serve durante il soggiorno</small></button>
+        <button id="feature-tab-news" type="button" role="tab" aria-selected="false" aria-controls="feature-panel-news" data-feature-tab="news"><span>03</span><b>News e bonus</b><small>Novità e scadenze da presidiare</small></button>
+      </div>
+
+      <div class="rd-product-stage" data-reveal>
+        <article class="rd-product-panel active" id="feature-panel-pulizie" role="tabpanel" aria-labelledby="feature-tab-pulizie" data-feature-panel="pulizie">
+          <div class="rd-product-copy">
+            <p>PULIZIE PROGRAMMATE</p>
+            <h3>Ogni partenza diventa un lavoro chiaro.</h3>
+            <p>Quando registri una prenotazione, il sistema prepara l'attività di pulizia per il giorno del check-out. Puoi assegnarla, seguire la checklist e sapere quali camere sono pronte.</p>
+            <ul>
+              <li><i>✓</i><span><b>Attività collegate alle partenze</b><small>Data, ora, camera e priorità già organizzate</small></span></li>
+              <li><i>✓</i><span><b>Responsabili e checklist</b><small>Ogni collaboratore sa cosa fare e cosa manca</small></span></li>
+              <li><i>✓</i><span><b>Aggiornamenti su WhatsApp</b><small>Messaggio pronto subito; invio automatico quando collegherai WhatsApp Business</small></span></li>
+            </ul>
+          </div>
+          <div class="rd-ops-preview" aria-label="Anteprima delle pulizie programmate">
+            <header><span><small>OPERATIVITÀ DI OGGI</small><b>Pulizie programmate</b></span><em>3 camere</em></header>
+            <div class="rd-ops-flow"><span><i>1</i>Check-out</span><b>→</b><span><i>2</i>Attività creata</span><b>→</b><span><i>3</i>Camera pronta</span></div>
+            <div class="rd-cleaning-list">
+              <article><time>10:30</time><span><b>Camera Ulivo</b><small>Maria · 5/5 controlli</small></span><em class="done">Completata</em></article>
+              <article><time>11:00</time><span><b>Camera Glicine</b><small>Anna · 3/5 controlli</small></span><em class="progress">In corso</em></article>
+              <article><time>12:00</time><span><b>Camera Mare</b><small>Da assegnare · priorità alta</small></span><em>Pianificata</em></article>
+            </div>
+            <footer><i></i><span><b>Prossimo arrivo alle 15:00</b><small>La priorità della camera è già evidenziata</small></span></footer>
+          </div>
+        </article>
+
+        <article class="rd-product-panel" id="feature-panel-guida" role="tabpanel" aria-labelledby="feature-tab-guida" data-feature-panel="guida" hidden>
+          <div class="rd-product-copy">
+            <p>GUIDA OSPITE DIGITALE</p>
+            <h3>Le risposte giuste sono già nelle mani dell'ospite.</h3>
+            <p>Una guida mobile personalizzata raccoglie arrivo, check-in, Wi-Fi, regole, contatti e consigli locali. Si apre da un semplice link o QR code, senza installare app.</p>
+            <ul>
+              <li><i>✓</i><span><b>Italiano e inglese</b><small>Contenuti ordinati per accompagnare tutto il soggiorno</small></span></li>
+              <li><i>✓</i><span><b>Identità della struttura</b><small>Nome, logo, colori e informazioni del tuo B&amp;B</small></span></li>
+              <li><i>✓</i><span><b>Territorio e servizi</b><small>Ristoranti, esperienze, trasporti e prodotti locali</small></span></li>
+            </ul>
+          </div>
+          <div class="rd-guide-preview" aria-label="Anteprima della guida digitale per gli ospiti">
+            <div class="rd-guide-phone">
+              <div class="rd-guide-cover"><span>CASA MARE</span><small>Reggio Calabria</small><h4>Benvenuto,<br>Marco</h4><p>Tutto ciò che ti serve per vivere bene il soggiorno.</p></div>
+              <div class="rd-guide-actions"><span><i>⌂</i><small>Come arrivare</small></span><span><i>⌁</i><small>Wi-Fi</small></span><span><i>15</i><small>Check-in</small></span><span><i>♡</i><small>Da scoprire</small></span></div>
+              <div class="rd-guide-tip"><small>CONSIGLIO DELLA STRUTTURA</small><b>Tre luoghi da non perdere sul lungomare</b><span>Apri la guida →</span></div>
+            </div>
+            <div class="rd-guide-qr"><i></i><span><b>Apri dal telefono</b><small>Nessuna app da installare</small></span></div>
+          </div>
+        </article>
+
+        <article class="rd-product-panel" id="feature-panel-news" role="tabpanel" aria-labelledby="feature-tab-news" data-feature-panel="news" hidden>
+          <div class="rd-product-copy">
+            <p>NEWS, NORMATIVE E BONUS</p>
+            <h3>Capisci cosa cambia, prima che diventi un problema.</h3>
+            <p>Il centro aggiornamenti riunisce novità, scadenze, bonus e bandi pertinenti alla tua struttura. Puoi filtrare per territorio e trasformare un avviso in un'attività da seguire.</p>
+            <ul>
+              <li><i>✓</i><span><b>Aggiornamenti pertinenti</b><small>Regione, provincia e tipo di struttura guidano la selezione</small></span></li>
+              <li><i>✓</i><span><b>Scadenze e opportunità</b><small>Le priorità vengono evidenziate in un solo spazio</small></span></li>
+              <li><i>!</i><span><b>Fonti sempre consultabili</b><small>Gli avvisi “Da verificare” richiedono controllo sulla fonte ufficiale</small></span></li>
+            </ul>
+          </div>
+          <div class="rd-news-preview" aria-label="Anteprima del centro news, normative e bonus">
+            <header><span><small>CENTRO AGGIORNAMENTI</small><b>Per il tuo B&amp;B</b></span><em>Aggiorna fonti</em></header>
+            <div class="rd-news-stats"><span><small>DA LEGGERE</small><b>4</b></span><span><small>ENTRO 30 GIORNI</small><b>2</b></span><span><small>OPPORTUNITÀ</small><b>3</b></span></div>
+            <article><div><i>NUOVO</i><em>REGGIO CALABRIA</em><small>DA VERIFICARE</small></div><h4>Nuovo aggiornamento per le strutture ricettive</h4><p>Apri la fonte, valuta l'impatto e aggiungi una scadenza al tuo piano.</p><footer><span>Fonte ufficiale collegata</span><b>Apri →</b></footer></article>
+            <aside><i>i</i><p>Strumento informativo e organizzativo: non sostituisce il parere del professionista o dell'ente competente.</p></aside>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="rd-section rd-all-section" id="tutto-in-uno">
+      <div class="rd-section-heading rd-section-heading-centered" data-reveal>
+        <p class="rd-kicker"><span></span> UN UNICO PUNTO DI CONTROLLO</p>
+        <h2>Tutto ciò che serve al tuo B&amp;B,<br><em>senza complicarlo.</em></h2>
+        <p>Gli strumenti essenziali lavorano insieme. Tu continui a gestire la tua attività con un metodo semplice e riconoscibile.</p>
+      </div>
+
+      <div class="rd-tool-grid">
+        <article data-reveal>
+          <span class="rd-tool-icon">CA</span>
+          <small>CALENDARIO</small>
+          <h3>Prenotazioni sempre chiare</h3>
+          <p>Camere, soggiorni, arrivi e partenze in una vista ordinata.</p>
+          <a href="#gestione">Scopri di più <span>→</span></a>
+          <div class="rd-card-decoration rd-decoration-calendar"><i></i><i></i><i></i></div>
+        </article>
+        <article data-reveal>
+          <span class="rd-tool-icon">OS</span>
+          <small>OSPITI</small>
+          <h3>Comunicazioni più curate</h3>
+          <p>Messaggi, richieste e informazioni seguono il viaggio dell'ospite.</p>
+          <a href="#ospiti">Scopri di più <span>→</span></a>
+          <div class="rd-card-decoration rd-decoration-messages"><i></i><i></i><i></i></div>
+        </article>
+        <article data-reveal>
+          <span class="rd-tool-icon">PU</span>
+          <small>PULIZIE</small>
+          <h3>Camere pronte al momento giusto</h3>
+          <p>Partenze, assegnazioni e checklist diventano un programma condiviso.</p>
+          <a href="#funzioni-complete" data-feature-link="pulizie">Scopri di più <span>→</span></a>
+          <div class="rd-card-decoration rd-decoration-tasks"><i></i><i></i><i></i></div>
+        </article>
+        <article data-reveal>
+          <span class="rd-tool-icon">NU</span>
+          <small>NUMERI</small>
+          <h3>Risultati facili da leggere</h3>
+          <p>Costi, ricavi e commissioni diventano indicazioni concrete.</p>
+          <a href="#risultati">Scopri di più <span>→</span></a>
+          <div class="rd-card-decoration rd-decoration-chart"><i></i><i></i><i></i><i></i></div>
+        </article>
+        <article data-reveal>
+          <span class="rd-tool-icon">GD</span>
+          <small>GUIDA DIGITALE</small>
+          <h3>Informazioni sempre disponibili</h3>
+          <p>Check-in, regole e territorio in una guida personalizzata.</p>
+          <a href="#funzioni-complete" data-feature-link="guida">Scopri di più <span>→</span></a>
+          <div class="rd-card-decoration rd-decoration-guide"><i></i><b>Benvenuto</b><small>Come arrivare</small></div>
+        </article>
+        <article data-reveal>
+          <span class="rd-tool-icon">NB</span>
+          <small>NEWS E BONUS</small>
+          <h3>Novità e scadenze in evidenza</h3>
+          <p>Un centro ordinato per seguire regole, bandi e opportunità pertinenti.</p>
+          <a href="#funzioni-complete" data-feature-link="news">Scopri di più <span>→</span></a>
+          <div class="rd-card-decoration rd-decoration-news"><i></i><i></i><i></i></div>
+        </article>
+        <article data-reveal>
+          <span class="rd-tool-icon">SC</span>
+          <small>SCORTE E FORNITORI</small>
+          <h3>Quello che serve, prima che finisca</h3>
+          <p>Soglie minime, ordini, contatti e manutenzioni restano nello stesso flusso.</p>
+          <a href="#metodo">Scopri il metodo <span>→</span></a>
+          <div class="rd-card-decoration rd-decoration-stock"><i></i><i></i><i></i><b>2 da riordinare</b></div>
+        </article>
+        <article data-reveal>
+          <span class="rd-tool-icon">ID</span>
+          <small>IDENTITÀ</small>
+          <h3>Una presenza che ti rappresenta</h3>
+          <p>Sito, contenuti e marketing coordinati con il carattere del B&amp;B.</p>
+          <a href="#metodo">Scopri di più <span>→</span></a>
+          <div class="rd-card-decoration rd-decoration-brand"><img src="logo-fatto.svg" alt=""><i></i></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="rd-section rd-audience-section" id="per-chi">
+      <div class="rd-audience-copy" data-reveal>
+        <p class="rd-kicker"><span></span> COSTRUITO PER LA TUA REALTÀ</p>
+        <h2>Grande abbastanza<br>per aiutarti.<br><em>Semplice abbastanza<br>per usarlo davvero.</em></h2>
+        <p>Il progetto nasce per chi gestisce una piccola struttura e non vuole adattarsi a sistemi pensati per grandi catene.</p>
+        <button type="button" class="rd-outline-button" data-demo-open>Verifica se fa per te <span>→</span></button>
+      </div>
+      <div class="rd-audience-cards">
+        <article data-reveal><span>01</span><div><small>B&amp;B INDIPENDENTI</small><h3>Per chi fa quasi tutto in prima persona</h3><p>Più ordine nelle attività, senza aggiungere complessità alle giornate.</p></div></article>
+        <article data-reveal><span>02</span><div><small>PICCOLE STRUTTURE</small><h3>Per chi coordina camere e collaboratori</h3><p>Informazioni condivise e compiti chiari, anche quando il team è ridotto.</p></div></article>
+        <article data-reveal><span>03</span><div><small>ATTIVITÀ IN CRESCITA</small><h3>Per chi vuole scegliere usando i dati</h3><p>Una base solida per capire risultati, priorità e opportunità reali.</p></div></article>
+      </div>
+    </section>
+
+    <section class="rd-trial-section" id="prova">
+      <div class="rd-trial-glow"></div>
+      <div class="rd-trial-copy" data-reveal>
+        <p class="rd-kicker rd-kicker-light"><span></span> UN MESE PER PROVARLO DAVVERO</p>
+        <h2>Prima lo usi.<br><em>Poi decidi.</em></h2>
+        <p>Partiamo dalla tua struttura, configuriamo insieme le informazioni essenziali e ti lasciamo il tempo di capire quanto il sistema può semplificare il lavoro.</p>
+        <button type="button" class="rd-light-button" data-demo-open><span>Richiedi il mese gratuito</span><i>→</i></button>
+      </div>
+      <div class="rd-trial-card" data-reveal>
+        <div class="rd-trial-card-head"><img src="logo-fatto.svg" alt=""><span><small>PIANO PRO</small><b>30 giorni</b></span><em>GRATIS</em></div>
+        <ul>
+          <li><i>✓</i><span><b>Accesso al gestionale</b><small>Per lavorare con i tuoi flussi reali</small></span></li>
+          <li><i>✓</i><span><b>Configurazione iniziale</b><small>Impostiamo insieme la base del B&amp;B</small></span></li>
+          <li><i>✓</i><span><b>Supporto diretto</b><small>Un riferimento durante tutto il mese</small></span></li>
+          <li><i>✓</i><span><b>Nessun impegno iniziale</b><small>Valuti il servizio dopo averlo provato</small></span></li>
+        </ul>
+        <button type="button" data-demo-open>Inizia la prova <span>→</span></button>
+        <a class="rd-after-trial-link" href="attivazione.html">Cosa succede dopo i 30 giorni? <span>→</span></a>
+      </div>
+    </section>
+
+    <section class="rd-section rd-steps-section" id="metodo">
+      <div class="rd-section-heading rd-section-heading-centered" data-reveal>
+        <p class="rd-kicker"><span></span> IL METODO</p>
+        <h2>Dal primo incontro<br><em>al lavoro di ogni giorno.</em></h2>
+        <p>Non ti consegniamo uno strumento vuoto: partiamo dalla tua struttura, prepariamo la base e restiamo presenti mentre impari a usarla.</p>
+      </div>
+      <div class="rd-steps">
+        <article data-reveal><span>01</span><div class="rd-step-icon"><i></i></div><h3>Conosciamo il tuo B&amp;B</h3><p>Ci racconti struttura, abitudini e problemi che vuoi risolvere.</p></article>
+        <article data-reveal><span>02</span><div class="rd-step-icon"><i></i><i></i></div><h3>Prepariamo il tuo spazio</h3><p>Configuriamo la base del gestionale intorno al tuo lavoro reale.</p></article>
+        <article data-reveal><span>03</span><div class="rd-step-icon"><b>30</b></div><h3>Lo provi per un mese</h3><p>Usi il sistema, raccogli risultati e poi scegli con consapevolezza.</p></article>
+        <article data-reveal><span>04</span><div class="rd-step-icon rd-step-icon-access"><b>→</b></div><h3>Scegli se continuare</h3><p>Dopo la prova confermi il piano, completi il pagamento e continui dalla tua area riservata.</p><a href="attivazione.html">Vedi il percorso <span>→</span></a></article>
+      </div>
+    </section>
+
+    <section class="rd-section rd-faq-section">
+      <div class="rd-faq-intro" data-reveal>
+        <p class="rd-kicker"><span></span> DOMANDE FREQUENTI</p>
+        <h2>Prima di iniziare,<br><em>facciamo chiarezza.</em></h2>
+        <p>Se non trovi ciò che cerchi, puoi parlarne direttamente con noi.</p>
+        <a data-whatsapp data-message="Salve, avrei una domanda su FATTO! e sulla prova gratuita di un mese." href="#">Fai una domanda su WhatsApp <span>→</span></a>
+      </div>
+      <div class="rd-faq-list" data-reveal>
+        <article class="open">
+          <button type="button" data-faq-toggle aria-expanded="true"><span>La prova gratuita dura davvero un mese?</span><i>−</i></button>
+          <div class="rd-faq-answer"><p>Sì. I 30 giorni gratuiti riguardano il piano Pro e ti permettono di capire se il sistema si adatta davvero al tuo modo di lavorare.</p></div>
+        </article>
+        <article>
+          <button type="button" data-faq-toggle aria-expanded="false"><span>A chi è rivolto il gestionale?</span><i>+</i></button>
+          <div class="rd-faq-answer"><p>La prima versione è costruita soprattutto per piccoli B&amp;B e strutture ricettive gestite direttamente dal proprietario.</p></div>
+        </article>
+        <article>
+          <button type="button" data-faq-toggle aria-expanded="false"><span>Devo cambiare subito tutti gli strumenti che uso?</span><i>+</i></button>
+          <div class="rd-faq-answer"><p>No. Partiamo dalle necessità essenziali e introduciamo il gestionale in modo graduale, senza interrompere l'operatività della struttura.</p></div>
+        </article>
+        <article>
+          <button type="button" data-faq-toggle aria-expanded="false"><span>Posso utilizzarlo anche da telefono?</span><i>+</i></button>
+          <div class="rd-faq-answer"><p>Sì. Il gestionale è progettato per adattarsi a computer, tablet e smartphone, così puoi controllare le attività anche quando non sei alla scrivania.</p></div>
+        </article>
+        <article>
+          <button type="button" data-faq-toggle aria-expanded="false"><span>Posso parlare con una persona durante la prova?</span><i>+</i></button>
+          <div class="rd-faq-answer"><p>Sì. La prova include un contatto diretto per l'avvio e per chiarire i dubbi principali durante il primo mese.</p></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="rd-final-cta">
+      <div data-reveal>
+        <p>IL TUO B&amp;B PUÒ LAVORARE MEGLIO</p>
+        <h2>Inizia con un mese.<br><em>Scopri il valore ogni giorno.</em></h2>
+      </div>
+      <button type="button" class="rd-primary-button rd-primary-button-large" data-demo-open><span>Prova FATTO! gratuitamente</span><i>→</i></button>
     </section>
   </main>
 
-  <footer class="home-footer">
-    <span>Giuseppe Vadalà · Reggio Calabria</span>
-    <a href="https://www.instagram.com/fattoconsulting/" target="_blank" rel="noopener noreferrer">Instagram · @fattoconsulting ↗</a>
-    <a href="privacy.html">Privacy, cookie e note legali</a>
+  <footer class="rd-footer">
+    <div class="rd-footer-top">
+      <div class="rd-footer-brand">
+        <a href="#inizio"><img src="logo-fatto.svg" alt=""><span>FATTO!</span></a>
+        <p>Regia operativa e digitale per piccoli B&amp;B.</p>
+        <a class="rd-footer-social" href="https://www.instagram.com/fattoconsulting/" target="_blank" rel="noopener noreferrer">Instagram · @fattoconsulting ↗</a>
+      </div>
+      <div class="rd-footer-column"><b>Prodotto</b><a href="#funzioni-complete">Gestionale</a><a href="#tutto-in-uno">Tutte le funzioni</a><a href="#prova">Prova gratuita</a><a href="https://gestionale.fattoconsulting.it/accesso" target="_blank" rel="noopener noreferrer">Accesso clienti</a></div>
+      <div class="rd-footer-column"><b>Esplora</b><a href="#gestione">Gestione del B&amp;B</a><a href="#ospiti">Esperienza ospiti</a><a href="#risultati">Controllo risultati</a><a href="#metodo">Metodo</a></div>
+      <div class="rd-footer-column"><b>Contatti</b><a data-whatsapp data-message="Salve, vorrei ricevere informazioni su FATTO! per il mio B&B." href="#">WhatsApp</a><a data-email href="#">fattoconsulting@gmail.com</a><span>Reggio Calabria</span></div>
+    </div>
+    <div class="rd-footer-bottom"><span>© 2026 FATTO! · Giuseppe Vadalà</span><a href="privacy.html">Privacy e cookie</a><a href="condizioni.html">Condizioni di abbonamento</a><a href="#inizio">Torna su ↑</a></div>
   </footer>
 
-  <script src="script.js?v=20260912a"></script>
-  <script src="page-flow.js?v=20260903g"></script>
+  <div class="demo-modal" data-demo-modal aria-hidden="true">
+    <button class="demo-backdrop" type="button" data-demo-close aria-label="Chiudi il modulo"></button>
+    <section class="demo-dialog" role="dialog" aria-modal="true" aria-labelledby="demo-packages-title" aria-describedby="demo-packages-description">
+      <button class="demo-close" type="button" data-demo-close aria-label="Chiudi il modulo"><span aria-hidden="true">×</span></button>
+
+      <div class="demo-package-view" data-demo-packages>
+        <header class="demo-packages-heading">
+          <p class="rd-kicker"><span></span> TROVA IL PACCHETTO ADATTO AL TUO B&amp;B</p>
+          <h2 id="demo-packages-title">Tre modi di farlo.<br><em>Uno da provare gratis.</em></h2>
+          <p id="demo-packages-description">Confronta servizi e prezzi, dal piano essenziale al progetto più completo. La prova gratuita di 30 giorni è disponibile soltanto con il piano Pro.</p>
+        </header>
+
+        <div class="demo-plan-grid">
+          <article class="demo-plan-card">
+            <div class="demo-plan-top"><span>01</span><small>PER PARTIRE CON ORDINE</small></div>
+            <h3>Start</h3>
+            <p class="demo-plan-price"><b><span>€</span>19</b><small>al mese · oppure €190/anno</small></p>
+            <p class="demo-plan-intro">Le funzioni essenziali per organizzare il lavoro quotidiano.</p>
+            <ul>
+              <li>Calendario e prenotazioni</li>
+              <li>Pulizie programmate e checklist</li>
+              <li>Scorte, manutenzioni e fornitori</li>
+              <li>Controllo dei costi essenziali</li>
+            </ul>
+            <button class="demo-plan-action demo-plan-action-secondary" type="button" data-checkout-plan="start">Scegli Start <span>→</span></button>
+          </article>
+
+          <article class="demo-plan-card featured">
+            <span class="demo-plan-badge">CONSIGLIATO</span>
+            <div class="demo-plan-top"><span>02</span><small>IL SISTEMA COMPLETO</small></div>
+            <h3>Pro</h3>
+            <p class="demo-plan-price demo-plan-free"><b><span>€</span>39</b><small>al mese · €390/anno · 30 giorni gratis</small></p>
+            <p class="demo-plan-intro">Tutto ciò che serve per gestire, accogliere e decidere meglio.</p>
+            <ul>
+              <li>Tutto il piano Start</li>
+              <li>Guida digitale per gli ospiti</li>
+              <li>Comunicazioni e percorso soggiorno</li>
+              <li>News, normative e bonus</li>
+              <li>Costi, risultati e obiettivi</li>
+            </ul>
+            <button class="demo-plan-action demo-plan-action-primary" type="button" data-checkout-plan="pro">Inizia la prova gratuita <span>→</span></button>
+          </article>
+
+          <article class="demo-plan-card">
+            <div class="demo-plan-top"><span>03</span><small>PER DISTINGUERTI E CRESCERE</small></div>
+            <h3>Su misura</h3>
+            <p class="demo-plan-price"><b><span>da €</span>99</b><small>al mese · progetto personalizzato</small></p>
+            <p class="demo-plan-intro">Gestionale, presenza digitale e supporto riuniti in un progetto dedicato.</p>
+            <ul>
+              <li>Tutto il piano Pro</li>
+              <li>Sito e identità digitale</li>
+              <li>Marketing e contenuti coordinati</li>
+              <li>Configurazione e sviluppo su misura</li>
+            </ul>
+            <a class="demo-plan-action demo-plan-action-secondary" data-whatsapp data-message="Salve, vorrei ricevere un preventivo per il piano Su misura, da €99 al mese, per il mio B&B." href="#">Richiedi un preventivo <span>→</span></a>
+          </article>
+        </div>
+
+        <p class="demo-packages-note"><i>✓</i> Prezzi riferiti a una struttura fino a 6 camere · nessun addebito senza una tua conferma</p>
+      </div>
+
+      <div class="demo-checkout-view" data-checkout-view hidden>
+        <button class="demo-back-to-plans" type="button" data-demo-plans-back>← Torna ai pacchetti</button>
+        <div class="demo-checkout-copy">
+          <p class="rd-kicker"><span></span> CHECKOUT PROTETTO DA STRIPE</p>
+          <h2 id="checkout-title">Attiva <em data-checkout-plan-name>Pro</em></h2>
+          <p id="checkout-description" data-checkout-description>30 giorni gratuiti, poi scegli se continuare. Inserirai i dati di pagamento soltanto nella pagina sicura di Stripe.</p>
+          <ul><li><i>✓</i><span>Nessun dato della carta passa dal sito FATTO!</span></li><li><i>✓</i><span>Licenza creata dopo la conferma verificata</span></li><li><i>✓</i><span>Puoi gestire o annullare il rinnovo dall’area clienti</span></li></ul>
+        </div>
+        <form class="demo-checkout-form" data-checkout-form action="https://gestionale.fattoconsulting.it/api/billing/checkout" method="post">
+          <input name="plan" type="hidden" value="pro" data-checkout-plan-field>
+          <input name="interval" type="hidden" value="month" data-checkout-interval-field>
+          <input name="trialDays" type="hidden" value="30" data-checkout-trial-field>
+          <input name="requestId" type="hidden" value="" data-checkout-request-id>
+          <div class="demo-checkout-summary">
+            <span><small>PIANO SELEZIONATO</small><strong data-checkout-summary-name>Pro</strong></span>
+            <b><em data-checkout-price>€39</em><small data-checkout-price-note>al mese dopo 30 giorni gratis</small></b>
+          </div>
+          <div class="demo-billing-toggle" role="group" aria-label="Periodicità dell'abbonamento">
+            <button class="active" type="button" data-billing-interval="month">Mensile</button>
+            <button type="button" data-billing-interval="year">Annuale <small>risparmi</small></button>
+          </div>
+          <div class="demo-checkout-renewal" data-checkout-renewal>Oggi €0. Il primo addebito di €39 avverrà al termine dei 30 giorni, salvo annullamento precedente.</div>
+          <label class="demo-consent demo-checkout-consent"><input name="terms" type="checkbox" value="accepted" required><span>Ho letto e accetto le <a href="condizioni.html" target="_blank" rel="noopener noreferrer">condizioni di abbonamento</a> e l’<a href="privacy.html" target="_blank" rel="noopener noreferrer">informativa privacy</a></span></label>
+          <button class="demo-submit" type="submit" disabled><span>Continua al pagamento sicuro</span><i aria-hidden="true">→</i></button>
+          <p class="demo-checkout-provider"><span>▣</span> Checkout ospitato da Stripe · connessione cifrata</p>
+          <p class="demo-form-error" data-checkout-error role="alert" hidden>Devi accettare le condizioni prima di continuare.</p>
+        </form>
+      </div>
+    </section>
+  </div>
+
+  <script src="script.js?v=20260917g"></script>
+  <script src="redesign.js?v=20260917a"></script>
 </body>
 </html>
